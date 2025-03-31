@@ -453,7 +453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8433401355470270450, guid: 9e9f0f2789c615641be842fb6537dad3, type: 3}
       propertyPath: m_text
-      value: Slide Blitz
+      value: Dreamy Drift
       objectReference: {fileID: 0}
     - target: {fileID: 8744049689244868947, guid: 9e9f0f2789c615641be842fb6537dad3, type: 3}
       propertyPath: m_AnchoredPosition.x

@@ -50,7 +50,7 @@ public class MainMenu : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
-            Application.Quit(); // ออกจากเกมในแพลตฟอร์มจริง
+            Application.Quit(); 
 #endif
     }
 }
