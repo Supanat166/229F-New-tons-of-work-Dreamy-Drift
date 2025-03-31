@@ -1,11 +1,12 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+
 public class GameTimer : MonoBehaviour
 {
-    public float timeRemaining = 60f; 
-    public TextMeshProUGUI timerText; 
-    public GameObject gameOverPanel; 
+    public float timeRemaining = 60f;
+    public TextMeshProUGUI timerText;
+    public GameObject gameOverPanel;
+    public GameObject timerCanvas;  
 
     private bool isGameOver = false;
 
@@ -13,7 +14,12 @@ public class GameTimer : MonoBehaviour
     {
         if (gameOverPanel != null)
         {
-            gameOverPanel.SetActive(false); 
+            gameOverPanel.SetActive(false);
+        }
+
+        if (timerCanvas != null)
+        {
+            timerCanvas.SetActive(true);  
         }
     }
 
@@ -23,7 +29,7 @@ public class GameTimer : MonoBehaviour
 
         if (timeRemaining > 0)
         {
-            timeRemaining -= Time.deltaTime; 
+            timeRemaining -= Time.deltaTime;
             UpdateTimerDisplay();
         }
         else
@@ -50,10 +56,15 @@ public class GameTimer : MonoBehaviour
 
         if (gameOverPanel != null)
         {
-            gameOverPanel.SetActive(true); 
+            gameOverPanel.SetActive(true);
         }
 
-        Time.timeScale = 0; 
+        if (timerCanvas != null)
+        {
+            timerCanvas.SetActive(false);  // ซ่อน TimerCanvas เมื่อเกมจบ
+        }
+
+        Time.timeScale = 0;
         Debug.Log("Game Over! Time is up.");
     }
 }
